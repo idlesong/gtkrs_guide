@@ -1,0 +1,8 @@
+[book]
+authors = ["idlesong"]
+language = "en"
+multilingual = false
+src = "src"
+title = "gtk-rs guide by examples"
+[output.html.fold]
+enable = true
