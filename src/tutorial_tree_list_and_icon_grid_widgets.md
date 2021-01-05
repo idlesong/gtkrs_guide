@@ -1,4 +1,6 @@
-## Tutorial Tree, List and Icon Grid Widgets 
+## Tutorial Tree, List and Icon Grid Widgets
+![alt text](./images/list-and-tree.png) ![alt text](./images/list-box.png)
+
 - Tree and List Widget Overview — Overview of GtkTreeModel, GtkTreeView, and friends
 - [TreeModel](https://gtk-rs.org/docs/gtk/struct.TreeModel.html) — The tree interface used by GtkTreeView
 - [TreeSelection](https://gtk-rs.org/docs/gtk/struct.TreeSelection.html) — The selection object for GtkTreeView

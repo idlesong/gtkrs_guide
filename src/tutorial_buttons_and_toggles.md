@@ -1,15 +1,17 @@
 ## Buttons and Toggles
-- [Button](https://gtk-rs.org/docs/gtk/struct.Button.html) — A widget that emits a signal when clicked on
-- [CheckButton](https://gtk-rs.org/docs/gtk/struct.CheckButton.html) — Create widgets with a discrete toggle button
-- [RadioButton](https://gtk-rs.org/docs/gtk/struct.RadioButton.html) — A choice from multiple check buttons
-- [ToggleButton](https://gtk-rs.org/docs/gtk/struct.ToggleButton.html) — Create buttons which retain their state
-- [LinkButton](https://gtk-rs.org/docs/gtk/struct.LinkButton.html) — Create buttons bound to a URL
-- [MenuButton](https://gtk-rs.org/docs/gtk/struct.MenuButton.html) — A widget that shows a popup when clicked on
-- [Switch](https://gtk-rs.org/docs/gtk/struct.Switch.html) — A “light switch” style toggle
-- [ScaleButton](https://gtk-rs.org/docs/gtk/struct.ScaleButton.html) — A button which pops up a scale
-- [VolumeButton](https://gtk-rs.org/docs/gtk/struct.VolumeButton.html) — A button which pops up a volume control
-- [LockButton](https://gtk-rs.org/docs/gtk/struct.LockButton.html) — A widget to unlock or lock privileged operations
-- [ModelButton](https://gtk-rs.org/docs/gtk/struct.ModelButton.html) — A button that uses a GAction as model
+widgets | description
+ ---|---
+![alt text](./images/button.png) | [Button](https://gtk-rs.org/docs/gtk/struct.Button.html) — A widget that emits a signal when clicked on
+![alt text](./images/check-button.png) | [CheckButton](https://gtk-rs.org/docs/gtk/struct.CheckButton.html) — Create widgets with a discrete toggle button
+![alt text](./images/radio-group.png) | [RadioButton](https://gtk-rs.org/docs/gtk/struct.RadioButton.html) — A choice from multiple check buttons
+![alt text](./images/toggle-button.png) | [ToggleButton](https://gtk-rs.org/docs/gtk/struct.ToggleButton.html) — Create buttons which retain their state
+![alt text](./images/link-button.png) | [LinkButton](https://gtk-rs.org/docs/gtk/struct.LinkButton.html) — Create buttons bound to a URL
+![alt text](./images/menu-button.png) | [MenuButton](https://gtk-rs.org/docs/gtk/struct.MenuButton.html) — A widget that shows a popup when clicked on
+- | [Switch](https://gtk-rs.org/docs/gtk/struct.Switch.html) — A “light switch” style toggle
+- | [ScaleButton](https://gtk-rs.org/docs/gtk/struct.ScaleButton.html) — A button which pops up a scale
+![alt text](./images/volumebutton.png) | [VolumeButton](https://gtk-rs.org/docs/gtk/struct.VolumeButton.html) — A button which pops up a volume control
+![alt text](./images/lockbutton.png) | [LockButton](https://gtk-rs.org/docs/gtk/struct.LockButton.html) — A widget to unlock or lock privileged operations
+- | [ModelButton](https://gtk-rs.org/docs/gtk/struct.ModelButton.html) — A button that uses a GAction as model
 
 ### Button
 

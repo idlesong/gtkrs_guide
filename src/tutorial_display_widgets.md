@@ -1,15 +1,16 @@
 ## display Widgets
-- [Label](https://gtk-rs.org/docs/gtk/struct.Label.html) — A widget that displays a small to medium amount of text
-- [Image](https://gtk-rs.org/docs/gtk/struct.Image.html) — A widget displaying an image
-- [Spinner](https://gtk-rs.org/docs/gtk/struct.Spinner.html) — Show a spinner animation
-- [ProgressBar](https://gtk-rs.org/docs/gtk/struct.ProgressBar.html) — A widget which indicates progress visually
-- More
-- [InfoBar](https://gtk-rs.org/docs/gtk/struct.InfoBar.html) — Report important messages to the user
-- [LevelBar](https://gtk-rs.org/docs/gtk/struct.LevelBar.html) — A bar that can used as a level indicator
-- [Statusbar](https://gtk-rs.org/docs/gtk/struct.Statusbar.html) — Report messages of minor importance to the user
-- [AccelLabel](https://gtk-rs.org/docs/gtk/struct.AccelLabel.html) — A label which displays an accelerator key on the right of the text
+widgets | description
+ ---|---
+![alt text](./images/label.png) | [Label](https://gtk-rs.org/docs/gtk/struct.Label.html) — A widget that displays a small to medium amount of text
+![alt text](./images/image.png) | [Image](https://gtk-rs.org/docs/gtk/struct.Image.html) — A widget displaying an image
+![alt text](./images/spinner.png)| [Spinner](https://gtk-rs.org/docs/gtk/struct.Spinner.html) — Show a spinner animation
+![alt text](./images/progressbar.png)| [ProgressBar](https://gtk-rs.org/docs/gtk/struct.ProgressBar.html) — A widget which indicates progress visually
+![alt text](./images/info-bar.png)| [InfoBar](https://gtk-rs.org/docs/gtk/struct.InfoBar.html) — Report important messages to the user
+![alt text](./images/levelbar.png)| [LevelBar](https://gtk-rs.org/docs/gtk/struct.LevelBar.html) — A bar that can used as a level indicator
+![alt text](./images/statusbar.png)| [Statusbar](https://gtk-rs.org/docs/gtk/struct.Statusbar.html) — Report messages of minor importance to the user
+![alt text](./images/accel-label.png)| [AccelLabel](https://gtk-rs.org/docs/gtk/struct.AccelLabel.html) — A label which displays an accelerator key on the right of the text
 
-examples: [cairo_png](cairo_png.rs), [cairo_threads](cairo_threads.rs), [cairo_test](cairo_test.rs) [demo](pango_attributes.rs),[progress_tracker](progress_tracker.rs)
+examples: [cairo_png](cairo_png.rs), [cairo_threads](cairo_threads.rs), [cairo_test](cairo_test.rs) [demo](pango_attributes.rs),
 
 ### Label
 Labels are the main method of placing non-editable text in windows, for instance to place a title next to a Gtk.Entry widget. You can specify the text in the constructor, or later with the Gtk.Label.set_text() or Gtk.Label.set_markup() methods.
@@ -38,6 +39,9 @@ When an application can determine how much work needs to take place (e.g. read a
 When an application has no accurate way of knowing the amount of work to do, it can use activity mode, which shows activity by a block moving back and forth within the progress area. In this mode, the application is required to call Gtk.ProgressBar.pulse() periodically to update the progress bar. You can also choose the step size, with the Gtk.ProgressBar.set_pulse_step() method.
 
 By default, Gtk.ProgressBar is horizontal and left-to-right, but you can change it to a vertical progress bar by using the Gtk.ProgressBar.set_orientation() method. Changing the direction the progress bar grows can be done using Gtk.ProgressBar.set_inverted(). Gtk.ProgressBar can also contain text which can be set by calling Gtk.ProgressBar.set_text() and Gtk.ProgressBar.set_show_text().
+
+[example: progress_tracker](progress_tracker.rs)
+
 
 ### Spinner
 

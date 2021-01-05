@@ -1,24 +1,26 @@
 ## Layout Containers
-- [GtkBox](https://gtk-rs.org/docs/gtk/struct.Box.html) — A container for packing widgets in a single row or column
-- [GtkGrid](https://gtk-rs.org/docs/gtk/struct.Grid.html) — Pack widgets in rows and columns
-- [GtkListBox](https://gtk-rs.org/docs/gtk/struct.ListBox.html) — A list container
-- [GtkFlowBox](https://gtk-rs.org/docs/gtk/struct.FlowBox.html) — A container that allows reflowing its children
-- [GtkNotebook](https://gtk-rs.org/docs/gtk/struct.Notebook.html) — A tabbed notebook container
-- [GtkOverlay](https://gtk-rs.org/docs/gtk/struct.Overlay.html) — A container which overlays widgets on top of each other [demo]
-- [GtkHeaderBar](https://gtk-rs.org/docs/gtk/struct.HeaderBar.html) — A box with a centered child
-- [GtkPaned](https://gtk-rs.org/docs/gtk/struct.Paned.html) — A widget with two adjustable panes
-- More full list
-- [GtkStack](https://gtk-rs.org/docs/gtk/struct.Stack.html) — A stacking container
-- [GtkStackSwitcher](https://gtk-rs.org/docs/gtk/struct.StackSwitcher.html) — A controller for GtkStack
-- [GtkStackSidebar](https://gtk-rs.org/docs/gtk/struct.StackSidebar.html) — An automatic sidebar widget
-- [GtkRevealer](https://gtk-rs.org/docs/gtk/struct.Revealer.html) — Hide and show with animation
-- [GtkActionBar](https://gtk-rs.org/docs/gtk/struct.ActionBar.html) — A full width bar for presenting contextual actions
-- [GtkButtonBox](https://gtk-rs.org/docs/gtk/struct.ButtonBox.html) — A container for arranging buttons
-- [GtkLayout](https://gtk-rs.org/docs/gtk/struct.Layout.html) — Infinite scrollable area containing child widgets and/or custom drawing
-- [GtkExpander](https://gtk-rs.org/docs/gtk/struct.Expander.html) — A container which can hide its child
-- [GtkOrientable](https://gtk-rs.org/docs/gtk/struct.Orientable.html) — An interface for flippable widgets
-- [GtkAspectFrame](https://gtk-rs.org/docs/gtk/struct.AspectFrame.html) — A frame that constrains its child to a particular aspect ratio
-- [GtkFixed](https://gtk-rs.org/docs/gtk/struct.Fixed.html) — A container which allows you to position widgets at fixed coordinates
+widgets | description
+---|---
+- | [GtkBox](https://gtk-rs.org/docs/gtk/struct.Box.html) — A container for packing widgets in a single row or column
+![alt text](./images/grid-packing.png) | [GtkGrid](https://gtk-rs.org/docs/gtk/struct.Grid.html) — Pack widgets in rows and columns
+![alt text](./images/list-box.png) | [GtkListBox](https://gtk-rs.org/docs/gtk/struct.ListBox.html) — A list container
+- | [GtkFlowBox](https://gtk-rs.org/docs/gtk/struct.FlowBox.html) — A container that allows reflowing its children
+![alt text](./images/notebook.png) | [GtkNotebook](https://gtk-rs.org/docs/gtk/struct.Notebook.html) — A tabbed notebook container
+- | [GtkOverlay](https://gtk-rs.org/docs/gtk/struct.Overlay.html) — A container which overlays widgets on top of each other [demo]
+![alt text](./images/headerbar.png) | [GtkHeaderBar](https://gtk-rs.org/docs/gtk/struct.HeaderBar.html) — A box with a centered child
+![alt text](./images/panes.png) | [GtkPaned](https://gtk-rs.org/docs/gtk/struct.Paned.html) — A widget with two adjustable panes
+- | More full list
+![alt text](./images/stack.png) | [GtkStack](https://gtk-rs.org/docs/gtk/struct.Stack.html) — A stacking container
+![alt text](./images/stackswitcher.png) | [GtkStackSwitcher](https://gtk-rs.org/docs/gtk/struct.StackSwitcher.html) — A controller for GtkStack
+- | [GtkStackSidebar](https://gtk-rs.org/docs/gtk/struct.StackSidebar.html) — An automatic sidebar widget
+- | [GtkRevealer](https://gtk-rs.org/docs/gtk/struct.Revealer.html) — Hide and show with animation
+- | [GtkActionBar](https://gtk-rs.org/docs/gtk/struct.ActionBar.html) — A full width bar for presenting contextual actions
+- | [GtkButtonBox](https://gtk-rs.org/docs/gtk/struct.ButtonBox.html) — A container for arranging buttons
+- | [GtkLayout](https://gtk-rs.org/docs/gtk/struct.Layout.html) — Infinite scrollable area containing child widgets and/or custom drawing
+- | [GtkExpander](https://gtk-rs.org/docs/gtk/struct.Expander.html) — A container which can hide its child
+- | [GtkOrientable](https://gtk-rs.org/docs/gtk/struct.Orientable.html) — An interface for flippable widgets
+- | [GtkAspectFrame](https://gtk-rs.org/docs/gtk/struct.AspectFrame.html) — A frame that constrains its child to a particular aspect ratio
+- | [GtkFixed](https://gtk-rs.org/docs/gtk/struct.Fixed.html) — A container which allows you to position widgets at fixed coordinates
 
 [grid.rs](grid.rs) [listbox](listbox.rs) [notebook](notebook.rs)
 
