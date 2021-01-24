@@ -20,16 +20,27 @@ The Button widget is another commonly used widget. It is generally used to attac
 The Gtk.Button widget can hold any valid child widget. That is it can hold most any other standard Gtk.Widget. The most commonly used child is the Gtk.Label.
 
 Usually, you want to connect to the button’s “clicked” signal which is emitted when the button has been pressed and released.
-9.1.1. Example
+
+``` rust
+let button = gtk::Button::new_with_label("Click me!");
+button.connect_clicked(|but| {
+    println!("button");
+});
+```
 
 ### ToggleButton
 
 A Gtk.ToggleButton is very similar to a normal Gtk.Button, but when clicked they remain activated, or pressed, until clicked again. When the state of the button is changed, the “toggled” signal is emitted.
 
 To retrieve the state of the Gtk.ToggleButton, you can use the Gtk.ToggleButton.get_active() method. This returns True if the button is “down”. You can also set the toggle button’s state, with Gtk.ToggleButton.set_active(). Note that, if you do this, and the state actually changes, it causes the “toggled” signal to be emitted.
-9.2.1. Example
-_images/togglebutton_example.png
 
+``` rust
+let toggle_button = gtk::ToggleButton::new_with_label("toggle");
+toggle_button.set_active(true);
+toggle_button.connect_clicked(|toggle| {
+    println!("toggle clicked");
+});
+```
 
 ### CheckButton
 
@@ -44,4 +55,130 @@ Radio buttons can be created with one of the static methods Gtk.RadioButton.new_
 When first run, the first radio button in the group will be active. This can be changed by calling Gtk.ToggleButton.set_active() with True as first argument.
 
 Changing a Gtk.RadioButton’s widget group after its creation can be achieved by calling Gtk.RadioButton.join_group().
-9.4.1. Example
+
+``` rust
+let radio_button = gtk::RadioButton::new_with_label("radio_button");
+radio_button.connect_clicked(|radio| {
+    // radio.set_active(radio.get_active());
+    println!("radio clicked");
+});
+hbox.pack_start(&radio_button, false, false, 0);
+```
+
+### LinkButton
+
+A Gtk.LinkButton is a Gtk.Button with a hyperlink, similar to the one used by web browsers, which triggers an action when clicked. It is useful to show quick links to resources.
+
+The URI bound to a Gtk.LinkButton can be set specifically using Gtk.LinkButton.set_uri(), and retrieved using Gtk.LinkButton.get_uri().
+``` rust
+let link_button = gtk::LinkButton::new_with_label(
+    "https://www.gtk.org",
+    Some("GTK+ Homepage")
+);
+```
+
+### Switch
+
+A Gtk.Switch is a widget that has two states: on or off. The user can control which state should be active by clicking the empty area, or by dragging the handle.
+
+You shouldn’t use the “activate” signal on the Gtk.Switch which is an action signal and emitting it causes the switch to animate. Applications should never connect to this signal, but use the “notify::active” signal, see the example here below.
+
+``` rust
+switch.connect_property_active_notify(|switch| {
+    let mut state = "on";
+    if switch.get_active() {
+        state = "on";
+    } else{
+        state = "off";
+    }
+    println!("Switch was turned {}", state);
+});
+switch.set_active(false);
+```
+
+
+#### buttons and toggles example
+_images/switch_example.png
+
+``` rust
+extern crate gio;
+extern crate gtk;
+
+use gio::prelude::*;
+use gtk::prelude::*;
+
+use std::env::args;
+
+fn build_ui(application: &gtk::Application) {
+    let window = gtk::ApplicationWindow::new(application);
+
+    window.set_title("Buttons and Toggles");
+    window.set_border_width(10);
+    window.set_position(gtk::WindowPosition::Center);
+    window.set_default_size(350, 48);
+
+    let button = gtk::Button::new_with_label("Click me!");
+    button.connect_clicked(|but| {
+        println!("button");
+    });
+    // Stack the buttons horizontally
+    let hbox = gtk::Box::new(gtk::Orientation::Vertical, 0);
+    hbox.pack_start(&button, true, true, 0);
+
+    let toggle_button = gtk::ToggleButton::new_with_label("toggle");
+    toggle_button.set_active(true);
+    toggle_button.connect_clicked(|toggle| {
+        println!("toggle clicked");
+    });
+    hbox.pack_start(&toggle_button, true, true, 0);
+
+    let radio_button = gtk::RadioButton::new_with_label("radio_button");
+    radio_button.connect_clicked(|radio| {
+        // radio.set_active(radio.get_active());
+        println!("radio clicked");
+    });
+    hbox.pack_start(&radio_button, false, false, 0);
+
+    let radio_button2 = gtk::RadioButton::new_with_label("radio_button2");
+    radio_button2.connect_clicked(|radio| {
+        // radio.set_active(radio.get_active());
+        println!("radio clicked");
+    });
+    hbox.pack_start(&radio_button2, false, false, 0);
+
+    let link_button = gtk::LinkButton::new_with_label(
+        "https://www.gtk.org",
+        Some("GTK+ Homepage")
+    );
+    hbox.pack_start(&link_button, false, false, 0);
+
+    let switch = gtk::Switch::new();
+    switch.connect_property_active_notify(|switch| {
+        let mut state = "on";
+        if switch.get_active() {
+            state = "on";
+        } else{
+            state = "off";
+        }
+        println!("Switch was turned {}", state);
+    });
+    switch.set_active(false);
+    hbox.pack_start(&switch, false, false, 0);
+
+    window.add(&hbox);
+
+    window.show_all();
+}
+
+fn main() {
+    let application =
+        gtk::Application::new(Some("com.github.gtk-rs.examples.basic"), Default::default())
+            .expect("Initialization failed...");
+
+    application.connect_activate(|app| {
+        build_ui(app);
+    });
+
+    application.run(&args().collect::<Vec<_>>());
+}
+```
