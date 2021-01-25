@@ -4,7 +4,9 @@ To start with our tutorial we create the simplest program possible. This program
 There are two ways to build UIs with gtk: **the code way**, and **the builder way**(WYSIWYG way with glade).
 
 ### Build UI: code way
-[basic.rs](basic.rs), [basic_subclass](basic_subclass.rs), [sync_widgets](sync_widgets.rs)
+![basic.rs](./images/example_basic.png)
+
+[basic_subclass](basic_subclass.rs), [sync_widgets](sync_widgets.rs)
 
 ``` rust
 extern crate gio;
@@ -54,6 +56,8 @@ This method has several advantages:
 - The description of the user interface is independent from the programming language being used.
 
 There is still code required for handling interface changes triggered by the user, but Gtk.Builder allows you to focus on implementing that functionality.
+
+![builder_basic.rs](./images/example_builder_basic.png)
 
 [builder_basics](builder_basics.rs),[builder_signal](builder_signal.rs)
 
