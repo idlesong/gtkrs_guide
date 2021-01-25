@@ -1,17 +1,8 @@
 ## Numeric and Text Data Entry
-widgets | description
----|---
-![alt text](./images/entry.png) | [Entry](https://gtk-rs.org/docs/gtk/struct.Entry.html) — A single line text entry field
-- | [EntryBuffer](https://gtk-rs.org/docs/gtk/struct.EntryBuffer.html) — Text buffer for GtkEntry
-- | [EntryCompletion](https://gtk-rs.org/docs/gtk/struct.EntryCompletion.html) — Completion functionality for GtkEntry
-![alt text](./images/scales.png) | [Scale](https://gtk-rs.org/docs/gtk/struct.Scale.html) — A slider widget for selecting a value from a range
-![alt text](./images/spinbutton.png) | [SpinButton](https://gtk-rs.org/docs/gtk/struct.SpinButton.html) — Retrieve an integer or floating-point number from the user
-![alt text](./images/search-entry.png) | [SearchEntry](https://gtk-rs.org/docs/gtk/struct.SearchEntry.html) — An entry which shows a search icon
-![alt text](./images/search-bar.png) | [SearchBar](https://gtk-rs.org/docs/gtk/struct.SearchBar.html) — A toolbar to integrate a search entry with
-- | [Editable](https://gtk-rs.org/docs/gtk/struct.Editable.html) — Interface for text-editing widgets
-
 ### Entry
-Entry widgets allow the user to enter text. You can change the contents with the `gtk::Entry.set_text()` method, and read the current contents with the `gtk::Entry.get_text()` method. You can also limit the number of characters the Entry can take by calling `gtk::Entry.set_max_length()`.
+![alt text](./images/gtkrs_entry.png)  — _A single line text entry field_
+
+[gtk::Entry](https://gtk-rs.org/docs/gtk/struct.Entry.html) widgets allow the user to enter text. You can change the contents with the `gtk::Entry.set_text()` method, and read the current contents with the `gtk::Entry.get_text()` method. You can also limit the number of characters the Entry can take by calling `gtk::Entry.set_max_length()`.
 
 Occasionally you might want to make an Entry widget read-only. This can be done by passing False to the `gtk::Entry.set_editable()` method.
 
@@ -20,7 +11,8 @@ Entry widgets can also be used to retrieve passwords from the user. It is common
 [gtk::Entry](https://gtk-rs.org/docs/gtk/struct.Entry.html) has the ability to display progress or activity information behind the text. This is similar to gtk::ProgressBar widget and is commonly found in web browsers to indicate how much of a page download has been completed. To make an entry display such information, use `gtk::Entry.set_progress_fraction()`, `gtk::Entry.set_progress_pulse_step()`, or `gtk::Entry.progress_pulse()`.
 
 Additionally, an Entry can show icons at either side of the entry. These icons can be activatable by clicking, can be set up as drag source and can have tooltips. To add an icon, use `gtk::Entry.set_icon_from_icon_name()` or one of the various other functions that set an icon from an icon name, a pixbuf, or icon theme. To set a tooltip on an icon, use `gtk::Entry.set_icon_tooltip_text()` or the corresponding function for markup.
-8.1. Example
+
+##### 8.1. Example
 _images/entry_example.png
 
 ``` rust
@@ -28,7 +20,6 @@ import gi
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, GLib
-
 
 class EntryWindow(gtk::Window):
     def __init__(self):
@@ -92,7 +83,7 @@ class EntryWindow(gtk::Window):
 
     def on_icon_toggled(self, button):
         if button.get_active():
-            icon_name = "system-search-symbolic"
+            icon_name = 'system-search-symbolic'
         else:
             icon_name = None
         self.entry.set_icon_from_icon_name(gtk::EntryIconPosition.PRIMARY, icon_name)
@@ -103,6 +94,7 @@ win.connect("destroy", gtk::main_quit)
 win.show_all()
 gtk::main()
 ```
+
 #### EntryCompletion
 - examples: [entry_completion.rs](entry_completion.rs)
 
@@ -218,7 +210,9 @@ fn main() {
 
 ### SpinButton
 
-A gtk::SpinButton is an ideal way to allow the user to set the value of some attribute. Rather than having to directly type a number into a gtk::Entry, gtk::SpinButton allows the user to click on one of two arrows to increment or decrement the displayed value. A value can still be typed in, with the bonus that it can be checked to ensure it is in a given range. The main properties of a gtk::SpinButton are set through gtk::Adjustment.
+![alt text](./images/gtkrs_spin_button.png)  — Retrieve an integer or floating-point number from the user  [SpinButton](https://gtk-rs.org/docs/gtk/struct.SpinButton.html)
+
+A [gtk::SpinButton](https://gtk-rs.org/docs/gtk/struct.SpinButton.html) is an ideal way to allow the user to set the value of some attribute. Rather than having to directly type a number into a gtk::Entry, gtk::SpinButton allows the user to click on one of two arrows to increment or decrement the displayed value. A value can still be typed in, with the bonus that it can be checked to ensure it is in a given range. The main properties of a gtk::SpinButton are set through gtk::Adjustment.
 
 To change the value that gtk::SpinButton is showing, use gtk::SpinButton.set_value(). The value entered can either be an integer or float, depending on your requirements, use `gtk::SpinButton.get_value()` or `gtk::SpinButton.get_value_as_int()`, respectively.
 
@@ -227,6 +221,16 @@ When you allow the displaying of float values in the spin button, you may wish t
 By default, gtk::SpinButton accepts textual data. If you wish to limit this to numerical values only, call `gtk::SpinButton.set_numeric()` with True as argument.
 
 We can also adjust the update policy of gtk::SpinButton. There are two options here; by default the spin button updates the value even if the data entered is invalid. Alternatively, we can set the policy to only update when the value entered is valid by calling  `gtk::SpinButton.set_update_policy()`.
+
+``` xml
+<object class="GtkSpinButton" id="spin_button">
+  <property name="visible">True</property>
+  <property name="can_focus">True</property>
+  <property name="adjustment">spin_adjustment</property>
+  <property name="digits">1</property>
+  <property name="update_policy">if-valid</property>
+</object>
+```
 
 #### SpinButton Examples
 ``` rust
@@ -254,3 +258,14 @@ spinbutton.connect_input(|spin_button| {
     }
 });
 ```
+### Common Numeric and Text data Entry widgets
+widgets | description
+---|---
+![alt text](./images/gtkrs_entry.png) | [Entry](https://gtk-rs.org/docs/gtk/struct.Entry.html) — A single line text entry field
+. | [EntryBuffer](https://gtk-rs.org/docs/gtk/struct.EntryBuffer.html) — Text buffer for GtkEntry
+. | [EntryCompletion](https://gtk-rs.org/docs/gtk/struct.EntryCompletion.html) — Completion functionality for GtkEntry
+![alt text](./images/gtkrs_scale.png) | [Scale](https://gtk-rs.org/docs/gtk/struct.Scale.html) — A slider widget for selecting a value from a range
+![alt text](./images/gtkrs_spin_button.png) | [SpinButton](https://gtk-rs.org/docs/gtk/struct.SpinButton.html) — Retrieve an integer or floating-point number from the user
+![alt text](./images/gtkrs_search_entry.png) | [SearchEntry](https://gtk-rs.org/docs/gtk/struct.SearchEntry.html) — An entry which shows a search icon
+![alt text](./images/search-bar.png) | [SearchBar](https://gtk-rs.org/docs/gtk/struct.SearchBar.html) — A toolbar to integrate a search entry with
+. | [Editable](https://gtk-rs.org/docs/gtk/struct.Editable.html) — Interface for text-editing widgets

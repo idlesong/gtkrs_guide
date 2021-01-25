@@ -1,12 +1,11 @@
 # Summary
-
-- [Installation](./tutorial_installation.md)
-- [Basics](./tutorial_basics_object_oriented.md)
-  - [Object Oriented GTK and rust](./tutorial_basics_object_oriented.md)
-  - [Main Loop and Signals](./tutorial_basics_mainloop_signals.md)
 - [Getting Started](./tutorial_getting_started.md)
+  - [Installation](./tutorial_installation.md)
   - [Basic examples](./tutorial_getting_started.md)
   - [Builder](./tutorial_getting_started.md)
+- [Core concepts](./tutorial_basics_object_oriented.md)
+  - [Object Oriented GTK and rust](./tutorial_basics_object_oriented.md)
+  - [Main Loop and Signals](./tutorial_basics_mainloop_signals.md)
 - [Layout containers](./tutorial_layout_containers.md)
   - [Box](./tutorial_layout_containers.md)
   - [Grid](./tutorial_layout_containers.md)

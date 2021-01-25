@@ -1,18 +1,7 @@
 ## display Widgets
-widgets | description
- ---|---
-![alt text](./images/label.png) | [Label](https://gtk-rs.org/docs/gtk/struct.Label.html) — A widget that displays a small to medium amount of text
-![alt text](./images/image.png) | [Image](https://gtk-rs.org/docs/gtk/struct.Image.html) — A widget displaying an image
-![alt text](./images/spinner.png)| [Spinner](https://gtk-rs.org/docs/gtk/struct.Spinner.html) — Show a spinner animation
-![alt text](./images/progressbar.png)| [ProgressBar](https://gtk-rs.org/docs/gtk/struct.ProgressBar.html) — A widget which indicates progress visually
-![alt text](./images/info-bar.png)| [InfoBar](https://gtk-rs.org/docs/gtk/struct.InfoBar.html) — Report important messages to the user
-![alt text](./images/levelbar.png)| [LevelBar](https://gtk-rs.org/docs/gtk/struct.LevelBar.html) — A bar that can used as a level indicator
-![alt text](./images/statusbar.png)| [Statusbar](https://gtk-rs.org/docs/gtk/struct.Statusbar.html) — Report messages of minor importance to the user
-![alt text](./images/accel-label.png)| [AccelLabel](https://gtk-rs.org/docs/gtk/struct.AccelLabel.html) — A label which displays an accelerator key on the right of the text
-
-examples: [cairo_png](cairo_png.rs), [cairo_threads](cairo_threads.rs), [cairo_test](cairo_test.rs) [demo](pango_attributes.rs),
-
 ### Label
+![alt text](./images/gtkrs_label.png) — _A widget that displays a small to medium amount of text_ [Label](https://gtk-rs.org/docs/gtk/struct.Label.html)
+
 Labels are the main method of placing non-editable text in windows, for instance to place a title next to a Gtk.Entry widget. You can specify the text in the constructor, or later with the Gtk.Label.set_text() or Gtk.Label.set_markup() methods.
 
 The width of the label will be adjusted automatically. You can produce multi-line labels by putting line breaks (“\n”) in the label string.
@@ -28,9 +17,13 @@ label.set_markup("Go to <a href=\"https://www.gtk.org\" "
                  "title=\"Our website\">GTK+ website</a> for more")
 ```
 
-Labels may contain mnemonics. Mnemonics are underlined characters in the label, used for keyboard navigation. Mnemonics are created by providing a string with an underscore before the mnemonic character, such as “_File”, to the functions Gtk.Label.new_with_mnemonic() or Gtk.Label.set_text_with_mnemonic(). Mnemonics automatically activate any activatable widget the label is inside, such as a Gtk.Button; if the label is not inside the mnemonic’s target widget, you have to tell the label about the target using Gtk.Label.set_mnemonic_widget().
+Labels may contain mnemonics. Mnemonics are underlined characters in the label, used for keyboard navigation. Mnemonics are created by providing a string with an underscore before the mnemonic character, such as `_File`, to the functions Gtk.Label.new_with_mnemonic() or Gtk.Label.set_text_with_mnemonic(). Mnemonics automatically activate any activatable widget the label is inside, such as a Gtk.Button; if the label is not inside the mnemonic’s target widget, you have to tell the label about the target using Gtk.Label.set_mnemonic_widget().
+
+### Image
+![alt text](./images/gtkrs_image.png) — _A widget displaying an image_ [Image](https://gtk-rs.org/docs/gtk/struct.Image.html)
 
 ### ProgressBar
+![alt text](./images/gtkrs_progressbar.png) — _A widget which indicates progress visually_  [ProgressBar](https://gtk-rs.org/docs/gtk/struct.ProgressBar.html)
 
 The Gtk.ProgressBar is typically used to display the progress of a long running operation. It provides a visual clue that processing is underway. The Gtk.ProgressBar can be used in two different modes: percentage mode and activity mode.
 
@@ -44,8 +37,23 @@ By default, Gtk.ProgressBar is horizontal and left-to-right, but you can change 
 
 
 ### Spinner
+![alt text](./images/gtkrs_spinner.png) — _Show a spinner animation_ [Spinner](https://gtk-rs.org/docs/gtk/struct.Spinner.html) 
 
 The Gtk.Spinner displays an icon-size spinning animation. It is often used as an alternative to a GtkProgressBar for displaying indefinite activity, instead of actual progress.
 
 To start the animation, use Gtk.Spinner.start(), to stop it use Gtk.Spinner.stop().
 12.1. Example
+
+examples: [cairo_png](cairo_png.rs), [cairo_threads](cairo_threads.rs), [cairo_test](cairo_test.rs) [demo](pango_attributes.rs),
+
+### Common display widgets
+widgets | description
+ ---|---
+![alt text](./images/gtkrs_label.png) | [Label](https://gtk-rs.org/docs/gtk/struct.Label.html) — A widget that displays a small to medium amount of text
+![alt text](./images/gtkrs_image.png) | [Image](https://gtk-rs.org/docs/gtk/struct.Image.html) — A widget displaying an image
+![alt text](./images/gtkrs_spinner.png)| [Spinner](https://gtk-rs.org/docs/gtk/struct.Spinner.html) — Show a spinner animation
+![alt text](./images/gtkrs_progressbar.png)| [ProgressBar](https://gtk-rs.org/docs/gtk/struct.ProgressBar.html) — A widget which indicates progress visually
+![alt text](./images/gtkrs_infobar.png)| [InfoBar](https://gtk-rs.org/docs/gtk/struct.InfoBar.html) — Report important messages to the user
+![alt text](./images/gtkrs_levelbar.png)| [LevelBar](https://gtk-rs.org/docs/gtk/struct.LevelBar.html) — A bar that can used as a level indicator
+![alt text](./images/statusbar.png)| [Statusbar](https://gtk-rs.org/docs/gtk/struct.Statusbar.html) — Report messages of minor importance to the user
+![alt text](./images/accel-label.png)| [AccelLabel](https://gtk-rs.org/docs/gtk/struct.AccelLabel.html) — A label which displays an accelerator key on the right of the text

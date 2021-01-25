@@ -90,3 +90,16 @@ let button = gtk::Button::with_label("Click me!");
 assert_eq!(is_a::<_, gtk::Container>(&button), true);
 assert_eq!(is_a::<_, gtk::Label>(&button), false);
 ```
+
+### Gnome libraries and Rust
+
+Currently, the Gtk-rs organization provides the bindings for the following libraries:
+- Gtk (the widget toolkit)
+- Gdk (low-level functions provided by the underlying windowing and graphics systems)
+- Gdk-pixbuf (image loading and manipulation)
+- Cairo (vector graphic API)
+- Glib (data structures and utilities for dealing with them)
+- Gio (file system abstractions)
+- Pango (layout engine, text and font handling)
+
+The goal is to provide a safe abstraction using Rust paradigms.

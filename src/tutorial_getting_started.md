@@ -1,8 +1,12 @@
-## getting started
-### basic examples
+## Getting started
+To start with our tutorial we create the simplest program possible. This program will create an a window with a button.
+
+There are two ways to build UIs with gtk: **the code way**, and **the builder way**(WYSIWYG way with glade).
+
+### Build UI: code way
 [basic.rs](basic.rs), [basic_subclass](basic_subclass.rs), [sync_widgets](sync_widgets.rs)
 
-```
+``` rust
 extern crate gio;
 extern crate gtk;
 
@@ -38,16 +42,27 @@ fn main() {
     application.run(&args().collect::<Vec<_>>());
 }
 ```
-### builders
-Tutorial [builders](builders.rs),[builder_basics](builder_basics.rs),[builder_signal](builder_signal.rs)
 
+### Build UI: WYSIWYG way - Builder
+
+The gtk::Builder class offers you the opportunity to design user interfaces without writing a single line of code. This is possible through describing the interface by an XML file and then loading the XML description at runtime and create the objects automatically, which the Builder class does for you. For the purpose of not needing to write the XML manually the Glade application lets you create the user interface in a WYSIWYG (what you see is what you get) manner
+
+This method has several advantages:
+- Less code needs to be written.
+- UI changes can be seen more quickly, so UIs are able to improve.
+- Designers without programming skills can create and edit UIs.
+- The description of the user interface is independent from the programming language being used.
+
+There is still code required for handling interface changes triggered by the user, but Gtk.Builder allows you to focus on implementing that functionality.
+
+[builder_basics](builder_basics.rs),[builder_signal](builder_signal.rs)
 
 ### Glade
 Glade is a tool which allows to easily write Gtk applications. Let’s see how you can use it with Gtk-rs.
 Example
 
 There isn’t much to explain in here. If you don’t know how to use Glade, take a look at their website directly. So first, let’s see a simple and short example:
-```
+``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <!-- interface-requires gtk+ 3.0 -->
@@ -112,7 +127,7 @@ There isn’t much to explain in here. If you don’t know how to use Glade, tak
 So in this file, we created a Window containing a Button, as simple as that. It also created a MessageDialog containing a message and a Label. Like I said, quite simple.
 
 Now let’s see how you can use this in your Rust code:
-```
+``` rust
 // First we get the file content.
 let glade_src = include_str!("builder_basics.glade");
 // Then we call the Builder call.
@@ -129,7 +144,7 @@ window.show_all();
 ```
 
 And that’s all. If you need to add signal handlings, you need to do the same. For example, we want to show the MessageDialog when the Button is clicked. Let’s add it:
-```
+``` rust
 let button: gtk::Button = builder.get_object("button1").unwrap();
 let dialog: gtk::MessageDialog = builder.get_object("messagedialog1").unwrap();
 
@@ -142,7 +157,7 @@ button.connect_clicked(move |_| {
 ```
 
 Which gives us:
-```
+``` rust
 if gtk::init().is_err() {
     println!("Failed to initialize GTK.");
     return;
